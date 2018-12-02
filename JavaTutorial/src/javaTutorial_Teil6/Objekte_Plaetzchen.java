@@ -4,12 +4,12 @@ package javaTutorial_Teil6;
  * @author Ole
  *
  */
- class Plaetzchen {
+ class Objekte_Plaetzchen {
 		
 	public static void main(String[] args) {
-		Plaetzchen p1 = new Plaetzchen();
-		Plaetzchen p2 = new Plaetzchen();
-		Plaetzchen p3 = new Plaetzchen();
+		Objekte_Plaetzchen p1 = new Objekte_Plaetzchen();
+		Objekte_Plaetzchen p2 = new Objekte_Plaetzchen();
+		Objekte_Plaetzchen p3 = new Objekte_Plaetzchen();
 		
 		p1.sorte		= new String("Kokos");
 		p1.groesse		= "mittel";
