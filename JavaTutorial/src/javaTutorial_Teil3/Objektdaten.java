@@ -12,7 +12,6 @@ public class Objektdaten {
 		String str = new String("Hello World"); /*
 												 * str = Referenzvariable in der die Referenz gespeichert wird 
 												 *		 also somit wo das Objekt abgespeichert wird
-												 * Hello World = Objekt das erzeugt wird
 												 */
 		String str1 = null;
 
@@ -51,5 +50,6 @@ public class Objektdaten {
 		System.out.println(sub);
 		System.out.println(sub1);
 		System.out.println(sub2);
+		
 	}
 }
