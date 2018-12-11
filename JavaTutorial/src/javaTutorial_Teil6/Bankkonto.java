@@ -2,12 +2,13 @@ package javaTutorial_Teil6;
 
 public class Bankkonto {
 	  // Instanzvariablen
-	  String kontonummer;
-	  String kontoinhaber;
-	  int    kontostand;
-
+	  private String kontonummer;
+	  private String kontoinhaber;
+	  private int    kontostand;
+	  private int	 zaehler = 0; //zaehlt wie oft das Bankkonto verwendet wird
+	  
 	  // Konstruktoren
-	  Bankkonto( String ktoNummer, String ktoInhaber, int start )
+	  public Bankkonto( String ktoNummer, String ktoInhaber, int start )
 	  {
 	    kontonummer  = ktoNummer;
 	    kontoinhaber = ktoInhaber;
@@ -15,19 +16,26 @@ public class Bankkonto {
 	  }
 
 	  // Methoden
-	  int aktuellerKontostand()
-	  {
-	    return kontostand;
-	  }
 
-	  void verarbeiteEinzahlung( int betrag )
+	  private void inkrementZaehler() {
+		  zaehler++;
+	  }
+	  
+	  public int aktuellerKontostand()
 	  {
+		  return kontostand;
+	  }
+	  
+	  public void verarbeiteEinzahlung( int betrag )
+	  {
+		inkrementZaehler();
 	    kontostand = kontostand + betrag;
 	  }
 
-	  void verarbeiteAuszahlung( int betrag )
+	  public void verarbeiteAuszahlung( int betrag )
 	  {
 	    int gebuehr;
+	    inkrementZaehler();
 	    if ( kontostand < 100000 )
 	      gebuehr = 15;
 	    else
@@ -36,9 +44,10 @@ public class Bankkonto {
 	    kontostand = kontostand - betrag - gebuehr;
 	  }
 	  
-	  void anzeigen() 
+	  public void anzeigen() 
 	  {
-		System.out.println("Kontonr.: "+kontonummer+"\t"+kontoinhaber+"\t"+(kontostand/100)+","+(kontostand%100)+"€");  
+		System.out.println("Kontonr.: "+kontonummer+"\t"+kontoinhaber+"\t"
+				+(kontostand/100)+","+(kontostand%100)+"€\t"+zaehler);  
 	  }
 }
 
