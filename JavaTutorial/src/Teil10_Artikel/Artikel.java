@@ -1,4 +1,4 @@
-package Teil10;
+package Teil10_Artikel;
 
 public class Artikel {
 
